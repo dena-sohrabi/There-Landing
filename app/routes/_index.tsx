@@ -157,6 +157,13 @@ const styles = stylex.create({
       textDecoration: "underline",
     },
   },
+  socialLink2: {
+    color: "#0085FF",
+    fontWeight: "bolder",
+    ":hover": {
+      textDecoration: "underline",
+    },
+  },
   logos: {
     display: "flex",
     alignItems: "center",
@@ -203,6 +210,9 @@ export default function Index() {
       <div {...stylex.props(styles.menu)}>
         <img src="/icons/Icon.png" width={80} alt="thereLogo" />
         <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
+          <a href="https:" {...stylex.props(styles.socialLink2)}>
+            Download
+          </a>
           <img
             src="/icons/github-mark.svg"
             alt="github logo"
