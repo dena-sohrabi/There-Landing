@@ -210,7 +210,10 @@ export default function Index() {
       <div {...stylex.props(styles.menu)}>
         <img src="/icons/Icon.png" width={80} alt="thereLogo" />
         <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
-          <a href="https:" {...stylex.props(styles.socialLink2)}>
+          <a
+            href="https://assets-cdn.noor.to/there/There-0.1.zip"
+            {...stylex.props(styles.socialLink2)}
+          >
             Download
           </a>
           <img
