@@ -141,7 +141,7 @@ const styles = stylex.create({
   },
   footer: {
     paddingTop: '20px',
-    paddingBottom: '20px',
+    paddingBottom: '40px',
     display: 'flex',
     justifyContent: 'space-between',
     width: '100%',
@@ -153,6 +153,10 @@ const styles = stylex.create({
   },
   footerText: {
     color: '#666',
+  },
+  copyright: {
+    color: '#888',
+    marginRight: 14,
   },
   socialLinks: {
     display: 'flex',
@@ -330,9 +334,9 @@ export default function Index() {
 
           <div {...stylex.props(styles.card)}>
             <div {...stylex.props(styles.cardIcon)}>🔒</div>
-            <h3 {...stylex.props(styles.cardTitle)}>Local data storage</h3>
+            <h3 {...stylex.props(styles.cardTitle)}>Local and private</h3>
             <p {...stylex.props(styles.cardDescription)}>
-              All information kept on your device
+              No sign up required. All information kept on your device.
             </p>
           </div>
           <div {...stylex.props(styles.card)}>
@@ -346,6 +350,9 @@ export default function Index() {
 
         <footer {...stylex.props(styles.footer)}>
           <p {...stylex.props(styles.footerText)}>
+            <span {...stylex.props(styles.copyright)}>
+              ©️ {new Date().getFullYear()} There
+            </span>{' '}
             Made by{' '}
             <a
               href="https://x.com/dena_sohrabi"
