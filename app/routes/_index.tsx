@@ -90,6 +90,21 @@ const styles = stylex.create({
     marginBottom: 20,
   },
 
+  productHunt: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginBottom: '57px',
+  },
+  productHuntText: {
+    fontSize: '16px',
+    lineHeight: 1.381,
+    fontWeight: '400',
+    color: '#1d1d1f',
+    marginBottom: '16px',
+    textAlign: 'center',
+  },
+
   trustedSection: {
     textAlign: 'center',
     marginTop: '32px',
@@ -348,6 +363,13 @@ export default function Index() {
           </div>
         </section>
 
+        <section {...stylex.props(styles.productHunt)}>
+          <p {...stylex.props(styles.productHuntText)}>
+            Please support our launch on ProductHunt today 🥹
+          </p>
+          <div dangerouslySetInnerHTML={{ __html: phCode }} />
+        </section>
+
         <footer {...stylex.props(styles.footer)}>
           <p {...stylex.props(styles.footerText)}>
             <span {...stylex.props(styles.copyright)}>
@@ -393,3 +415,5 @@ export default function Index() {
     </div>
   );
 }
+
+const phCode = `<a href="https://www.producthunt.com/posts/there-2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-there&#0045;2" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=489503&theme=light" alt="There - A&#0032;beautiful&#0032;native&#0032;time&#0032;zone&#0032;app&#0032;for&#0032;macOS&#0032; | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>`;
