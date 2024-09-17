@@ -365,7 +365,7 @@ export default function Index() {
 
         <section {...stylex.props(styles.productHunt)}>
           <p {...stylex.props(styles.productHuntText)}>
-            Please support our launch on ProductHunt today 🥹
+            Please support our launch on Product Hunt today 🥹
           </p>
           <div dangerouslySetInnerHTML={{ __html: phCode }} />
         </section>
