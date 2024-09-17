@@ -1,49 +1,72 @@
-import type { MetaFunction } from "@remix-run/node";
-import * as stylex from "@stylexjs/stylex";
+import type { MetaFunction } from '@remix-run/node';
+import * as stylex from '@stylexjs/stylex';
 
 const styles = stylex.create({
   container2: {
     fontFamily:
       '"SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif',
-    maxWidth: "1000px",
-    margin: "0 auto",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "column",
+    maxWidth: '1000px',
+    margin: '0 auto',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
   },
   container: {
     fontFamily:
       '"SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif',
-    maxWidth: "900px",
-    margin: "0 auto",
-    padding: "20px",
-    color: "#1d1d1f",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "column",
+    maxWidth: '900px',
+    margin: '0 auto',
+    padding: '20px',
+    color: '#1d1d1f',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
   },
   header: {
-    textAlign: "center",
+    textAlign: 'center',
     // marginBottom: "60px",
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  button: {
+    height: 38,
+    lineHeight: 38,
+    background: {
+      default: '#0070f3',
+      ':hover': '#0366d6',
+    },
+    transition: 'background 0.15s ease-out',
+    color: 'white',
+    marginBottom: 12,
+    marginTop: 4,
+    fontSize: '16px',
+    width: 240,
+    fontWeight: '600',
+    borderRadius: '12px',
+    padding: '0 24px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   menu: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    width: "75%",
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '75%',
     marginTop: 30,
-    marginBottom: 50,
+    marginBottom: 30,
   },
   menuItem: {
     fontSize: {
-      default: "18px",
-      "@media (max-width: 768px)": "14px",
+      default: '16px',
+      '@media (max-width: 768px)': '14px',
     },
     color: {
-      default: "#666",
-      ":hover": "#333",
+      default: '#666',
+      ':hover': '#333',
     },
   },
   menuLogoItem: {
@@ -51,156 +74,138 @@ const styles = stylex.create({
     height: 22,
     opacity: {
       default: 0.8,
-      ":hover": 1,
+      ':hover': 1,
     },
   },
   heading: {
     fontSize: {
-      default: "36px",
-      "@media (max-width: 768px)": "32px",
+      default: '36px',
+      '@media (max-width: 768px)': '32px',
     },
     lineHeight: 1.1,
-    fontWeight: "600",
-    letterSpacing: "-0.003em",
-    color: "#1d1d1f",
+    fontWeight: '600',
+    color: '#1d1d1f',
 
-    maxWidth: "600px",
+    maxWidth: '600px',
     marginBottom: 20,
   },
 
   trustedSection: {
-    textAlign: "center",
-    marginTop: "60px",
+    textAlign: 'center',
+    marginTop: '32px',
   },
   trustedText: {
-    fontSize: "21px",
+    fontSize: '18px',
     lineHeight: 1.381,
-    fontWeight: "400",
-    letterSpacing: "0.011em",
-    color: "#1d1d1f",
+    fontWeight: '400',
+    color: '#1d1d1f',
   },
   svgContainer: {
-    display: "flex",
-    justifyContent: "center",
-    flexWrap: "wrap",
-    gap: "30px",
+    display: 'flex',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    gap: '30px',
   },
   companyLogo: {
-    height: "30px",
-    width: "auto",
+    height: '30px',
+    width: 'auto',
     opacity: 0.8,
   },
   cardsSection: {
-    marginTop: "100px",
-    display: "grid",
+    marginTop: '70px',
+    display: 'grid',
     gridTemplateColumns: {
-      default: "repeat(3, 1fr)",
-      "@media (max-width: 1024px)": "repeat(2, 1fr)",
-      "@media (max-width: 768px)": "1fr",
+      default: 'repeat(2, 1fr)',
+      '@media (max-width: 400px)': '1fr',
     },
-    gap: "20px",
-    marginBottom: "100px",
+    gap: '16px',
+    marginBottom: '100px',
   },
   card: {
-    backgroundColor: "#FAFAFA",
-    borderRadius: "8px",
-    padding: "30px",
-    transition: "all 0.3s ease",
-    ":hover": {
-      transform: "scale(1.03)",
-    },
+    backgroundColor: '#FAFAFA',
+    borderRadius: '8px',
+    padding: '18px 22px',
   },
   cardIcon: {
-    fontSize: "36px",
+    fontSize: '30px',
   },
   cardTitle: {
-    fontSize: "20px",
-    lineHeight: 1.381,
-    fontWeight: "700",
-    letterSpacing: "0.011em",
-    marginBottom: "8px",
+    fontSize: '19px',
+    fontWeight: 'bold',
+    marginBottom: '6px',
   },
   cardDescription: {
-    fontSize: "18px",
-    lineHeight: 1.47059,
-    fontWeight: "400",
-    letterSpacing: "-0.022em",
-    color: "#333",
+    fontSize: '16px',
+    fontWeight: '400',
+    color: '#555',
   },
   footer: {
-    textAlign: "center",
-    borderTop: "1px solid #d2d2d7",
-    paddingTop: "20px",
-    paddingBottom: "20px",
+    paddingTop: '20px',
+    paddingBottom: '20px',
+    display: 'flex',
+    justifyContent: 'space-between',
+    width: '100%',
+    flexDirection: {
+      default: 'row',
+      '@media (max-width: 400px)': 'column',
+    },
+    fontSize: '16px',
   },
   footerText: {
-    fontSize: "18px",
-    lineHeight: 1.33337,
-    fontWeight: "600",
-    letterSpacing: "-0.01em",
-    color: "#333",
-    marginBottom: "20px",
+    color: '#666',
   },
   socialLinks: {
-    display: "flex",
-    justifyContent: "center",
-    gap: "30px",
+    display: 'flex',
+    justifyContent: 'flex-end',
+    gap: '18px',
   },
   socialLink: {
-    color: "#515154",
-    textDecoration: "none",
-    fontSize: "18px",
-    lineHeight: 1.42859,
-    fontWeight: "400",
-    letterSpacing: "-0.016em",
-    ":hover": {
-      textDecoration: "underline",
-    },
-  },
-  socialLink2: {
-    color: "#0085FF",
-    fontWeight: "bolder",
-    ":hover": {
-      textDecoration: "underline",
+    textDecoration: 'none',
+    ':hover': {
+      textDecoration: 'underline',
     },
   },
   logos: {
-    display: "flex",
-    alignItems: "center",
-    flexWrap: "wrap",
-    overflow: "hidden",
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    overflow: 'hidden',
     gap: 16,
   },
 
   logo: {
     scale: 1.2,
     transform: {
-      default: "scale(0.7)",
-      "@media (max-width: 400px)": "scale(0.6)",
+      default: 'scale(0.7)',
+      '@media (max-width: 400px)': 'scale(0.6)',
     },
     opacity: {
       default: 0.6,
-      ":hover": 1,
+      ':hover': 1,
     },
     marginLeft: -2,
     filter: {
-      default: "grayscale(95%) contrast(1.1)",
-      ":hover": "grayscale(0%) contrast(1)",
+      default: 'grayscale(95%) contrast(1.1)',
+      ':hover': 'grayscale(0%) contrast(1)',
     },
 
-    transition: "opacity 120ms, filter 120ms",
+    transition: 'opacity 120ms, filter 120ms',
   },
   image: {
-    width: "auto",
-    height: 400,
+    width: 'auto',
     borderRadius: 8,
   },
 });
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "There - Timezone Tracker" },
-    { name: "description", content: "Track timezones across the world" },
+    { title: 'There - Timezones in your menubar' },
+    {
+      name: 'description',
+      content:
+        'Track local time of your friends, teammates and family. You can set photo and name and add them to your menubar.',
+    },
   ];
 };
 
@@ -209,19 +214,18 @@ export default function Index() {
     <div {...stylex.props(styles.container2)}>
       <div {...stylex.props(styles.menu)}>
         <img src="/icons/Icon.png" width={80} alt="thereLogo" />
-        <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
-          <a
-            href="https://assets-cdn.noor.to/there/There-0.1.zip"
-            {...stylex.props(styles.socialLink2)}
-          >
-            Download
+        <div style={{ display: 'flex', gap: 18, alignItems: 'center' }}>
+          <a {...stylex.props(styles.menuItem)} href="https://x.com/ThereHQ">
+            Follow on X (Twitter)
           </a>
-          <img
-            src="/icons/github-mark.svg"
-            alt="github logo"
-            {...stylex.props(styles.menuLogoItem)}
-          />
-          <p {...stylex.props(styles.menuItem)}>Follow on X</p>
+
+          <a href="https://github.com/dena-sohrabi/There">
+            <img
+              src="/icons/github-mark.svg"
+              alt="github logo"
+              {...stylex.props(styles.menuLogoItem)}
+            />
+          </a>
         </div>
       </div>
       <div {...stylex.props(styles.container)}>
@@ -229,18 +233,33 @@ export default function Index() {
           <h1 {...stylex.props(styles.heading)}>
             Local time of your friends, teammates or family in menubar
           </h1>
+
+          <a
+            href="https://assets-cdn.noor.to/there/There.zip"
+            {...stylex.props(styles.button)}
+          >
+            Download for macOS
+          </a>
         </header>
       </div>
-      <img src="/appImage.png" alt="AppImage" {...stylex.props(styles.image)} />
+      <img
+        src="/app.jpg"
+        srcSet="/app@2x.jpg 2x"
+        width="784px"
+        height="522px"
+        alt="Screenshot of There app with a few entries"
+        {...stylex.props(styles.image)}
+      />
+
       <div {...stylex.props(styles.container)}>
         <section {...stylex.props(styles.trustedSection)}>
           <p {...stylex.props(styles.trustedText)}>
-            Trusted by +17,000 people at top companies
+            Used by +17,000 people including people from companies like:
           </p>
           <div {...stylex.props(styles.logos)}>
             <img
               src="/icons/apple.svg"
-              width={50}
+              width={38}
               alt="Apple logo"
               {...stylex.props(styles.logo)}
             />
@@ -295,35 +314,23 @@ export default function Index() {
         <section {...stylex.props(styles.cardsSection)}>
           <div {...stylex.props(styles.card)}>
             <div {...stylex.props(styles.cardIcon)}>🌍</div>
-            <h3 {...stylex.props(styles.cardTitle)}>Time Zone Addition</h3>
+            <h3 {...stylex.props(styles.cardTitle)}>Easy to use</h3>
             <p {...stylex.props(styles.cardDescription)}>
-              Add zones by city, country, UTC offset, or abbreviation
-            </p>
-          </div>
-          <div {...stylex.props(styles.card)}>
-            <div {...stylex.props(styles.cardIcon)}>🖼️</div>
-            <h3 {...stylex.props(styles.cardTitle)}>Photo Import</h3>
-            <p {...stylex.props(styles.cardDescription)}>
-              Import images from X, Telegram, or local files
-            </p>
-          </div>
-          <div {...stylex.props(styles.card)}>
-            <div {...stylex.props(styles.cardIcon)}>⏱️</div>
-            <h3 {...stylex.props(styles.cardTitle)}>Time Difference</h3>
-            <p {...stylex.props(styles.cardDescription)}>
-              See gaps between your time and others
+              Add time zones by city, country, abbrs like PST, or UTC offsets
             </p>
           </div>
           <div {...stylex.props(styles.card)}>
             <div {...stylex.props(styles.cardIcon)}>👥</div>
-            <h3 {...stylex.props(styles.cardTitle)}>Track friends/places</h3>
+            <h3 {...stylex.props(styles.cardTitle)}>People, not time zones</h3>
             <p {...stylex.props(styles.cardDescription)}>
-              Add places and people with country flags
+              Set their name and photo by entering their X or Telegram handle.
+              Or pick a photo locally.
             </p>
           </div>
+
           <div {...stylex.props(styles.card)}>
             <div {...stylex.props(styles.cardIcon)}>🔒</div>
-            <h3 {...stylex.props(styles.cardTitle)}>Local Data Storage</h3>
+            <h3 {...stylex.props(styles.cardTitle)}>Local data storage</h3>
             <p {...stylex.props(styles.cardDescription)}>
               All information kept on your device
             </p>
@@ -332,60 +339,46 @@ export default function Index() {
             <div {...stylex.props(styles.cardIcon)}>🪶</div>
             <h3 {...stylex.props(styles.cardTitle)}>Lightweight</h3>
             <p {...stylex.props(styles.cardDescription)}>
-              0-1% idle CPU usage, Ultra-low memory
+              Native, ultra low resource usage, keep it running all the time.
             </p>
           </div>
         </section>
 
         <footer {...stylex.props(styles.footer)}>
           <p {...stylex.props(styles.footerText)}>
-            Made with ❤️ by{" "}
+            Made by{' '}
             <a
               href="https://x.com/dena_sohrabi"
               target="_blank"
               rel="noreferrer"
-              style={{
-                color: "#FC87A0",
-                margin: 4,
-              }}
             >
-              Dena
-            </a>
-            &
-            <a
-              href="https://x.com/morajabi"
-              target="_blank"
-              rel="noreferrer"
-              style={{
-                color: "#00A542",
-                margin: 4,
-              }}
-            >
-              Mo
+              Dena Sohrabi
+            </a>{' '}
+            and{' '}
+            <a href="https://x.com/morajabi" target="_blank" rel="noreferrer">
+              Mo Rajabi
             </a>
           </p>
           <div {...stylex.props(styles.socialLinks)}>
+            <a href="mailto:hey@there.pm" {...stylex.props(styles.socialLink)}>
+              hey@there.pm
+            </a>
             <a
-              href="https://twitter.com/there_hq"
+              href="https://x.com/ThereHQ"
               target="_blank"
               rel="noopener noreferrer"
               {...stylex.props(styles.socialLink)}
             >
               Follow on X
             </a>
+
             <a
-              href="mailto:support@there.team"
-              {...stylex.props(styles.socialLink)}
-            >
-              support@there.team
-            </a>
-            <a
-              href="https://github.com/your-repo"
+              href="https://github.com/dena-sohrabi/There"
               target="_blank"
               rel="noopener noreferrer"
               {...stylex.props(styles.socialLink)}
             >
-              GitHub (open source)
+              GitHub
             </a>
           </div>
         </footer>
