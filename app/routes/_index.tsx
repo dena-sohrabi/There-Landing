@@ -33,7 +33,7 @@ const styles = stylex.create({
   },
   button: {
     height: 38,
-    lineHeight: 38,
+    lineHeight: '38px',
     background: {
       default: '#0070f3',
       ':hover': '#0366d6',
