@@ -41,6 +41,13 @@ const styles = stylex.create({
     marginBottom: 8,
     display: 'flex',
   },
+  // downloading...
+  underDownload2: {
+    fontSize: 16,
+    color: '#333',
+    marginTop: 8,
+    marginBottom: 8,
+  },
   brewing: {
     color: '#333',
     backgroundColor: '#f0f0f0',
@@ -81,6 +88,27 @@ const styles = stylex.create({
     fontSize: '16px',
     fontWeight: 'bold',
     width: 240,
+    borderRadius: '10px',
+    padding: '0 24px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  tweet: {
+    height: 42,
+    lineHeight: '42px',
+    background: {
+      default: '#1a1a1a',
+      ':hover': '#000',
+    },
+    transition: 'background 0.15s ease-out',
+    color: 'white',
+    marginBottom: 12,
+    width: 240,
+    marginTop: 4,
+    fontSize: '16px',
+    fontWeight: 'bold',
+    // width: 240,
     borderRadius: '10px',
     padding: '0 24px',
     display: 'flex',
@@ -267,6 +295,7 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   const [brewing, setBrewing] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [downloading, setDownloading] = useState(false);
 
   return (
     <div {...stylex.props(styles.container2)}>
@@ -291,12 +320,33 @@ export default function Index() {
           <h1 {...stylex.props(styles.heading)}>
             Local time of your friends, teammates or family in menubar
           </h1>
-          <a
-            href="https://assets-cdn.noor.to/there/There.zip"
-            {...stylex.props(styles.button)}
-          >
-            Download for macOS
-          </a>
+
+          {downloading ? (
+            <p {...stylex.props(styles.underDownload2)}>
+              <a
+                href="https://twitter.com/intent/tweet?text=I%20love%20this%20time%20zone%20app:%20there.pm%20by%20@dena_sohrabi%20@morajabi"
+                {...stylex.props(styles.tweet)}
+              >
+                <span style={{ marginRight: 8 }}>𝕏</span> Tweet There 🫡
+              </a>
+              <a href="https://assets-cdn.there.pm/there/There.zip" download>
+                Download
+              </a>{' '}
+              is starting!
+            </p>
+          ) : (
+            <a
+              href="https://assets-cdn.there.pm/there/There.zip"
+              download
+              target="_self"
+              {...stylex.props(styles.button)}
+              onClick={(e) => {
+                setDownloading(true);
+              }}
+            >
+              Download for macOS
+            </a>
+          )}
 
           {brewing ? (
             <p {...stylex.props(styles.underDownload, styles.brewing)}>
