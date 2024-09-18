@@ -1,5 +1,6 @@
 import type { MetaFunction } from '@remix-run/node';
 import * as stylex from '@stylexjs/stylex';
+import { useState } from 'react';
 
 const styles = stylex.create({
   container2: {
@@ -31,9 +32,44 @@ const styles = stylex.create({
     flexDirection: 'column',
     alignItems: 'center',
   },
+
+  underDownload: {
+    fontSize: 14,
+    fontFamily: '"Reddit Mono", monospace',
+    color: '#888',
+    marginTop: 8,
+    marginBottom: 8,
+    display: 'flex',
+  },
+  brewing: {
+    color: '#333',
+    backgroundColor: '#f0f0f0',
+    borderRadius: 8,
+    paddingTop: 6,
+    paddingBottom: 6,
+    marginTop: 2,
+    marginBottom: 2,
+    paddingLeft: 20,
+    paddingRight: 12,
+  },
+  linkButton: {
+    color: { default: '#888', ':hover': '#333' },
+    textDecoration: 'none',
+    marginLeft: 10,
+  },
+
+  copyBtn: {
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 10,
+
+    width: 22,
+  },
+
   button: {
-    height: 38,
-    lineHeight: '38px',
+    height: 42,
+    lineHeight: '42px',
     background: {
       default: '#0070f3',
       ':hover': '#0366d6',
@@ -43,9 +79,9 @@ const styles = stylex.create({
     marginBottom: 12,
     marginTop: 4,
     fontSize: '16px',
+    fontWeight: 'bold',
     width: 240,
-    fontWeight: '600',
-    borderRadius: '12px',
+    borderRadius: '10px',
     padding: '0 24px',
     display: 'flex',
     alignItems: 'center',
@@ -229,6 +265,9 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
+  const [brewing, setBrewing] = useState(false);
+  const [copied, setCopied] = useState(false);
+
   return (
     <div {...stylex.props(styles.container2)}>
       <div {...stylex.props(styles.menu)}>
@@ -252,13 +291,63 @@ export default function Index() {
           <h1 {...stylex.props(styles.heading)}>
             Local time of your friends, teammates or family in menubar
           </h1>
-
           <a
             href="https://assets-cdn.noor.to/there/There.zip"
             {...stylex.props(styles.button)}
           >
             Download for macOS
           </a>
+
+          {brewing ? (
+            <p {...stylex.props(styles.underDownload, styles.brewing)}>
+              <code>brew install --cask there</code>
+
+              <button
+                {...stylex.props(styles.copyBtn)}
+                onClick={() => {
+                  navigator.clipboard.writeText('brew install --cask there');
+                  setCopied(true);
+                  setTimeout(() => setCopied(false), 1000);
+                }}
+              >
+                {copied ? (
+                  '✔️'
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect
+                      x="9"
+                      y="9"
+                      width="13"
+                      height="13"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                )}
+              </button>
+            </p>
+          ) : (
+            <p {...stylex.props(styles.underDownload)}>
+              <span>macOS 13+ | 4.8 MB |</span>
+              <button
+                {...stylex.props(styles.linkButton)}
+                onClick={() => setBrewing((b) => !b)}
+              >
+                Install via homebrew
+              </button>
+            </p>
+          )}
         </header>
       </div>
       <img
