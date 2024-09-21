@@ -528,6 +528,9 @@ export default function Index() {
             </a>
           </p>
           <div {...stylex.props(styles.socialLinks)}>
+            <a href="https://v1.there.pm" {...stylex.props(styles.socialLink)}>
+              V1
+            </a>
             <a href="mailto:hey@there.pm" {...stylex.props(styles.socialLink)}>
               hey@there.pm
             </a>
