@@ -1,56 +1,56 @@
-import type { MetaFunction } from '@remix-run/node';
-import * as stylex from '@stylexjs/stylex';
-import { useState } from 'react';
+import type { MetaFunction } from "@remix-run/node";
+import * as stylex from "@stylexjs/stylex";
+import { useState } from "react";
 
 const styles = stylex.create({
   container2: {
     fontFamily:
       '"SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif',
-    maxWidth: '1000px',
-    margin: '0 auto',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
+    maxWidth: "1000px",
+    margin: "0 auto",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "column",
   },
   container: {
     fontFamily:
       '"SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif',
-    maxWidth: '900px',
-    margin: '0 auto',
-    padding: '20px',
-    color: '#1d1d1f',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
+    maxWidth: "900px",
+    margin: "0 auto",
+    padding: "20px",
+    color: "#1d1d1f",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "column",
   },
   header: {
-    textAlign: 'center',
+    textAlign: "center",
     // marginBottom: "60px",
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
 
   underDownload: {
     fontSize: 14,
     fontFamily: '"Reddit Mono", monospace',
-    color: '#888',
+    color: "#888",
     marginTop: 8,
     marginBottom: 8,
-    display: 'flex',
+    display: "flex",
   },
   // downloading...
   underDownload2: {
     fontSize: 16,
-    color: '#333',
+    color: "#333",
     marginTop: 8,
     marginBottom: 8,
   },
   brewing: {
-    color: '#333',
-    backgroundColor: '#f0f0f0',
+    color: "#333",
+    backgroundColor: "#f0f0f0",
     borderRadius: 8,
     paddingTop: 6,
     paddingBottom: 6,
@@ -60,15 +60,15 @@ const styles = stylex.create({
     paddingRight: 12,
   },
   linkButton: {
-    color: { default: '#888', ':hover': '#333' },
-    textDecoration: 'none',
+    color: { default: "#888", ":hover": "#333" },
+    textDecoration: "none",
     marginLeft: 10,
   },
 
   copyBtn: {
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
     marginLeft: 10,
 
     width: 22,
@@ -76,61 +76,61 @@ const styles = stylex.create({
 
   button: {
     height: 42,
-    lineHeight: '42px',
+    lineHeight: "42px",
     background: {
-      default: '#0070f3',
-      ':hover': '#0366d6',
+      default: "#0070f3",
+      ":hover": "#0366d6",
     },
-    transition: 'background 0.15s ease-out',
-    color: 'white',
+    transition: "background 0.15s ease-out",
+    color: "white",
     marginBottom: 12,
     marginTop: 4,
-    fontSize: '16px',
-    fontWeight: 'bold',
+    fontSize: "16px",
+    fontWeight: "bold",
     width: 240,
-    borderRadius: '10px',
-    padding: '0 24px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    borderRadius: "10px",
+    padding: "0 24px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
   tweet: {
     height: 42,
-    lineHeight: '42px',
+    lineHeight: "42px",
     background: {
-      default: '#1a1a1a',
-      ':hover': '#000',
+      default: "#1a1a1a",
+      ":hover": "#000",
     },
-    transition: 'background 0.15s ease-out',
-    color: 'white',
+    transition: "background 0.15s ease-out",
+    color: "white",
     marginBottom: 12,
     width: 240,
     marginTop: 4,
-    fontSize: '16px',
-    fontWeight: 'bold',
+    fontSize: "16px",
+    fontWeight: "bold",
     // width: 240,
-    borderRadius: '10px',
-    padding: '0 24px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    borderRadius: "10px",
+    padding: "0 24px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
   menu: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: '75%',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    width: "75%",
     marginTop: 30,
     marginBottom: 30,
   },
   menuItem: {
     fontSize: {
-      default: '16px',
-      '@media (max-width: 768px)': '14px',
+      default: "16px",
+      "@media (max-width: 768px)": "14px",
     },
     color: {
-      default: '#666',
-      ':hover': '#333',
+      default: "#666",
+      ":hover": "#333",
     },
   },
   menuLogoItem: {
@@ -138,156 +138,156 @@ const styles = stylex.create({
     height: 22,
     opacity: {
       default: 0.8,
-      ':hover': 1,
+      ":hover": 1,
     },
   },
   heading: {
     fontSize: {
-      default: '36px',
-      '@media (max-width: 768px)': '32px',
+      default: "36px",
+      "@media (max-width: 768px)": "32px",
     },
     lineHeight: 1.1,
-    fontWeight: '600',
-    color: '#1d1d1f',
+    fontWeight: "600",
+    color: "#1d1d1f",
 
-    maxWidth: '600px',
+    maxWidth: "600px",
     marginBottom: 20,
   },
 
   productHunt: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    marginBottom: '57px',
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    marginBottom: "57px",
   },
   productHuntText: {
-    fontSize: '16px',
+    fontSize: "16px",
     lineHeight: 1.381,
-    fontWeight: '400',
-    color: '#1d1d1f',
-    marginBottom: '16px',
-    textAlign: 'center',
+    fontWeight: "400",
+    color: "#1d1d1f",
+    marginBottom: "16px",
+    textAlign: "center",
   },
 
   trustedSection: {
-    textAlign: 'center',
-    marginTop: '32px',
+    textAlign: "center",
+    marginTop: "32px",
   },
   trustedText: {
-    fontSize: '18px',
+    fontSize: "18px",
     lineHeight: 1.381,
-    fontWeight: '400',
-    color: '#1d1d1f',
+    fontWeight: "400",
+    color: "#1d1d1f",
   },
   svgContainer: {
-    display: 'flex',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
-    gap: '30px',
+    display: "flex",
+    justifyContent: "center",
+    flexWrap: "wrap",
+    gap: "30px",
   },
   companyLogo: {
-    height: '30px',
-    width: 'auto',
+    height: "30px",
+    width: "auto",
     opacity: 0.8,
   },
   cardsSection: {
-    marginTop: '70px',
-    display: 'grid',
+    marginTop: "70px",
+    display: "grid",
     gridTemplateColumns: {
-      default: 'repeat(2, 1fr)',
-      '@media (max-width: 400px)': '1fr',
+      default: "repeat(2, 1fr)",
+      "@media (max-width: 400px)": "1fr",
     },
-    gap: '16px',
-    marginBottom: '100px',
+    gap: "16px",
+    marginBottom: "100px",
   },
   card: {
-    backgroundColor: '#FAFAFA',
-    borderRadius: '8px',
-    padding: '18px 22px',
+    backgroundColor: "#FAFAFA",
+    borderRadius: "8px",
+    padding: "18px 22px",
   },
   cardIcon: {
-    fontSize: '30px',
+    fontSize: "30px",
   },
   cardTitle: {
-    fontSize: '19px',
-    fontWeight: 'bold',
-    marginBottom: '6px',
+    fontSize: "19px",
+    fontWeight: "bold",
+    marginBottom: "6px",
   },
   cardDescription: {
-    fontSize: '16px',
-    fontWeight: '400',
-    color: '#555',
+    fontSize: "16px",
+    fontWeight: "400",
+    color: "#555",
   },
   footer: {
-    paddingTop: '20px',
-    paddingBottom: '40px',
-    display: 'flex',
-    justifyContent: 'space-between',
-    width: '100%',
+    paddingTop: "20px",
+    paddingBottom: "40px",
+    display: "flex",
+    justifyContent: "space-between",
+    width: "100%",
     flexDirection: {
-      default: 'row',
-      '@media (max-width: 400px)': 'column',
+      default: "row",
+      "@media (max-width: 400px)": "column",
     },
-    fontSize: '16px',
+    fontSize: "16px",
   },
   footerText: {
-    color: '#666',
+    color: "#666",
   },
   copyright: {
-    color: '#888',
+    color: "#888",
     marginRight: 14,
   },
   socialLinks: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    gap: '18px',
+    display: "flex",
+    justifyContent: "flex-end",
+    gap: "18px",
   },
   socialLink: {
-    textDecoration: 'none',
-    ':hover': {
-      textDecoration: 'underline',
+    textDecoration: "none",
+    ":hover": {
+      textDecoration: "underline",
     },
   },
   logos: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
-    overflow: 'hidden',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexWrap: "wrap",
+    overflow: "hidden",
     gap: 16,
   },
 
   logo: {
     scale: 1.2,
     transform: {
-      default: 'scale(0.7)',
-      '@media (max-width: 400px)': 'scale(0.6)',
+      default: "scale(0.7)",
+      "@media (max-width: 400px)": "scale(0.6)",
     },
     opacity: {
       default: 0.6,
-      ':hover': 1,
+      ":hover": 1,
     },
     marginLeft: -2,
     filter: {
-      default: 'grayscale(95%) contrast(1.1)',
-      ':hover': 'grayscale(0%) contrast(1)',
+      default: "grayscale(95%) contrast(1.1)",
+      ":hover": "grayscale(0%) contrast(1)",
     },
 
-    transition: 'opacity 120ms, filter 120ms',
+    transition: "opacity 120ms, filter 120ms",
   },
   image: {
-    width: 'auto',
+    width: "auto",
     borderRadius: 8,
   },
 });
 
 export const meta: MetaFunction = () => {
   return [
-    { title: 'There - Timezones in your menubar' },
+    { title: "There - Timezones in your menubar" },
     {
-      name: 'description',
+      name: "description",
       content:
-        'Track local time of your friends, teammates and family. You can set photo and name and add them to your menubar.',
+        "Track local time of your friends, teammates and family. You can set photo and name and add them to your menubar.",
     },
   ];
 };
@@ -301,7 +301,7 @@ export default function Index() {
     <div {...stylex.props(styles.container2)}>
       <div {...stylex.props(styles.menu)}>
         <img src="/icons/Icon.png" width={80} alt="thereLogo" />
-        <div style={{ display: 'flex', gap: 18, alignItems: 'center' }}>
+        <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
           <a {...stylex.props(styles.menuItem)} href="https://x.com/ThereHQ">
             Follow on X (Twitter)
           </a>
@@ -331,7 +331,7 @@ export default function Index() {
               </a>
               <a href="https://assets-cdn.there.pm/there/There.zip" download>
                 Download
-              </a>{' '}
+              </a>{" "}
               is starting!
             </p>
           ) : (
@@ -355,13 +355,13 @@ export default function Index() {
               <button
                 {...stylex.props(styles.copyBtn)}
                 onClick={() => {
-                  navigator.clipboard.writeText('brew install --cask there');
+                  navigator.clipboard.writeText("brew install --cask there");
                   setCopied(true);
                   setTimeout(() => setCopied(false), 1000);
                 }}
               >
                 {copied ? (
-                  '✔️'
+                  "✔️"
                 ) : (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -502,27 +502,20 @@ export default function Index() {
           </div>
         </section>
 
-        <section {...stylex.props(styles.productHunt)}>
-          <p {...stylex.props(styles.productHuntText)}>
-            Please support our launch on Product Hunt today 🥹
-          </p>
-          <div dangerouslySetInnerHTML={{ __html: phCode }} />
-        </section>
-
         <footer {...stylex.props(styles.footer)}>
           <p {...stylex.props(styles.footerText)}>
             <span {...stylex.props(styles.copyright)}>
               ©️ {new Date().getFullYear()} There
-            </span>{' '}
-            Made by{' '}
+            </span>{" "}
+            Made by{" "}
             <a
               href="https://x.com/dena_sohrabi"
               target="_blank"
               rel="noreferrer"
             >
               Dena Sohrabi
-            </a>{' '}
-            and{' '}
+            </a>{" "}
+            and{" "}
             <a href="https://x.com/morajabi" target="_blank" rel="noreferrer">
               Mo Rajabi
             </a>
