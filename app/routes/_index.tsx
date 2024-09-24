@@ -544,6 +544,14 @@ export default function Index() {
             >
               GitHub
             </a>
+            <a
+              href="https://paypal.me/therehq?country.x=LV&locale.x=en_US"
+              target="_blank"
+              rel="noopener noreferrer"
+              {...stylex.props(styles.socialLink)}
+            >
+              Donate <span style={{ fontSize: 12 }}>❤️</span>
+            </a>
           </div>
         </footer>
       </div>
