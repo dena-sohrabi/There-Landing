@@ -6,11 +6,9 @@ import { Footer, Menu } from "./_index";
 const styles = stylex.create({
   container2: {
     fontFamily:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-    maxWidth: "900px",
+      '"SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif',
+    maxWidth: "1000px",
     margin: "0 auto",
-    padding: "20px",
-    color: "#1d1d1f",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -18,8 +16,8 @@ const styles = stylex.create({
   },
   container: {
     fontFamily:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-    maxWidth: "755px",
+      '"SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif',
+    maxWidth: "785px",
     margin: "0 auto",
     padding: "20px",
     color: "#1d1d1f",

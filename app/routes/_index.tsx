@@ -223,6 +223,7 @@ const styles = stylex.create({
     display: "flex",
     justifyContent: "space-between",
     width: "100%",
+    maxWidth: 900,
     flexDirection: {
       default: "row",
       "@media (max-width: 400px)": "column",
