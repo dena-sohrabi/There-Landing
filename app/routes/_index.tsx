@@ -73,7 +73,6 @@ const styles = stylex.create({
 
     width: 22,
   },
-
   button: {
     height: 42,
     lineHeight: "42px",
@@ -299,22 +298,7 @@ export default function Index() {
 
   return (
     <div {...stylex.props(styles.container2)}>
-      <div {...stylex.props(styles.menu)}>
-        <img src="/icons/Icon.png" width={80} alt="thereLogo" />
-        <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
-          <a {...stylex.props(styles.menuItem)} href="https://x.com/ThereHQ">
-            Follow on X (Twitter)
-          </a>
-
-          <a href="https://github.com/dena-sohrabi/There">
-            <img
-              src="/icons/github-mark.svg"
-              alt="github logo"
-              {...stylex.props(styles.menuLogoItem)}
-            />
-          </a>
-        </div>
-      </div>
+      <Menu />
       <div {...stylex.props(styles.container)}>
         <header {...stylex.props(styles.header)}>
           <h1 {...stylex.props(styles.heading)}>
@@ -502,61 +486,82 @@ export default function Index() {
           </div>
         </section>
 
-        <footer {...stylex.props(styles.footer)}>
-          <p {...stylex.props(styles.footerText)}>
-            <span {...stylex.props(styles.copyright)}>
-              ©️ {new Date().getFullYear()} There
-            </span>{" "}
-            Made by{" "}
-            <a
-              href="https://x.com/dena_sohrabi"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Dena Sohrabi
-            </a>{" "}
-            and{" "}
-            <a href="https://x.com/morajabi" target="_blank" rel="noreferrer">
-              Mo Rajabi
-            </a>
-          </p>
-          <div {...stylex.props(styles.socialLinks)}>
-            <a href="https://v1.there.pm" {...stylex.props(styles.socialLink)}>
-              V1
-            </a>
-            <a href="mailto:hey@there.pm" {...stylex.props(styles.socialLink)}>
-              hey@there.pm
-            </a>
-            <a
-              href="https://x.com/ThereHQ"
-              target="_blank"
-              rel="noopener noreferrer"
-              {...stylex.props(styles.socialLink)}
-            >
-              Follow on X
-            </a>
-
-            <a
-              href="https://github.com/dena-sohrabi/There"
-              target="_blank"
-              rel="noopener noreferrer"
-              {...stylex.props(styles.socialLink)}
-            >
-              GitHub
-            </a>
-            <a
-              href="https://paypal.me/therehq?country.x=LV&locale.x=en_US"
-              target="_blank"
-              rel="noopener noreferrer"
-              {...stylex.props(styles.socialLink)}
-            >
-              Donate <span style={{ fontSize: 12 }}>❤️</span>
-            </a>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </div>
   );
 }
 
-const phCode = `<a href="https://www.producthunt.com/posts/there-2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-there&#0045;2" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=489503&theme=light" alt="There - A&#0032;beautiful&#0032;native&#0032;time&#0032;zone&#0032;app&#0032;for&#0032;macOS&#0032; | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>`;
+export const Footer = () => {
+  return (
+    <footer {...stylex.props(styles.footer)}>
+      <p {...stylex.props(styles.footerText)}>
+        <span {...stylex.props(styles.copyright)}>
+          ©️ {new Date().getFullYear()} There
+        </span>{" "}
+        Made by{" "}
+        <a href="https://x.com/dena_sohrabi" target="_blank" rel="noreferrer">
+          Dena Sohrabi
+        </a>{" "}
+        and{" "}
+        <a href="https://x.com/morajabi" target="_blank" rel="noreferrer">
+          Mo Rajabi
+        </a>
+      </p>
+      <div {...stylex.props(styles.socialLinks)}>
+        <a href="https://v1.there.pm" {...stylex.props(styles.socialLink)}>
+          V1
+        </a>
+        <a href="mailto:hey@there.pm" {...stylex.props(styles.socialLink)}>
+          hey@there.pm
+        </a>
+        <a
+          href="https://x.com/ThereHQ"
+          target="_blank"
+          rel="noopener noreferrer"
+          {...stylex.props(styles.socialLink)}
+        >
+          Follow on X
+        </a>
+
+        <a
+          href="https://github.com/dena-sohrabi/There"
+          target="_blank"
+          rel="noopener noreferrer"
+          {...stylex.props(styles.socialLink)}
+        >
+          GitHub
+        </a>
+        <a
+          href="/donate"
+          target="_blank"
+          rel="noopener noreferrer"
+          {...stylex.props(styles.socialLink)}
+        >
+          Donate <span style={{ fontSize: 12 }}>❤️</span>
+        </a>
+      </div>
+    </footer>
+  );
+};
+
+export const Menu = () => {
+  return (
+    <div {...stylex.props(styles.menu)}>
+      <img src="/icons/Icon.png" width={80} alt="thereLogo" />
+      <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
+        <a {...stylex.props(styles.menuItem)} href="https://x.com/ThereHQ">
+          Follow on X (Twitter)
+        </a>
+
+        <a href="https://github.com/dena-sohrabi/There">
+          <img
+            src="/icons/github-mark.svg"
+            alt="github logo"
+            {...stylex.props(styles.menuLogoItem)}
+          />
+        </a>
+      </div>
+    </div>
+  );
+};
